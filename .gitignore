@@ -1,3 +1,4 @@
+.env
 mlruns
 aapl_2016_2020.csv
 aapl_2021_2023.csv
