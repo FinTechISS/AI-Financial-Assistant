@@ -24,13 +24,12 @@ ticker_selection = st.selectbox('Select Ticker:', categories[category])
 ticker = ticker_selection.split(' - ')[0]  # Extract the ticker symbol
 
 # Widgets for selecting the period, start, and end date
-period = st.selectbox('Select Period:', ['1d', '1wk', '1mo', '3mo', '6mo', '1y'])
-start_date = st.date_input('Start Date', value=pd.Timestamp('2010-01-01'))
-end_date = st.date_input('End Date', value=pd.Timestamp('2020-01-01'))
+start_date = st.date_input('Start Date', value=pd.Timestamp('2022-01-01'))
+end_date = st.date_input('End Date', value=pd.Timestamp('2024-05-05'))
 
 # Fetch data
 ticker_data = yf.Ticker(ticker)
-hist_data = ticker_data.history(period=period, start=start_date, end=end_date)
+hist_data = ticker_data.history(start=start_date, end=end_date)
 
 if category in ['Stocks', 'Cryptocurrencies', 'Natural Resources']:
     st.write(f"## Closing Price of {ticker_selection}")

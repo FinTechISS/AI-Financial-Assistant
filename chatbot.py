@@ -22,6 +22,7 @@ def get_response(query, chat_history):
 
     Chat history: {chat_history}
     User question: {user_question}
+    When asked to give recommendations, provide the best financial advice you can think of and provide numbers to support your answer.
     """
 
     prompt = ChatPromptTemplate.from_template(template)

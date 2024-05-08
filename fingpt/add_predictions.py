@@ -11,7 +11,7 @@ end_date = "2024-05-07"
 
 for element in elements:
 
-    current_db = pd.read_csv(f'../docs/{element}_stock_extrapolated.csv')
+    current_db = pd.read_csv(f'./docs/{element}_element_extrapolated.csv')
     
     current_db.drop(columns=['Unnamed: 0'], inplace=True)
     
@@ -21,4 +21,4 @@ for element in elements:
     
     current_db['Adj Close'] = predictions
     
-    current_db.to_csv(f'../docs/{element}_stock_extrapolated.csv', index=False, mode='w')
+    current_db.to_csv(f'./docs/{element}_element_extrapolated.csv', index=False, mode='w')
